@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'Login')
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="mt-5">
@@ -17,7 +17,7 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
-                    <button type="submit" class="btn btn-primary"
+                    <button type="submit" class="btn btn-primary mt-3"
                             style="background-color: #071013; border-color: #071013">Login
                     </button>
                 </form>

@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    function login() {
+    public function login() {
         return view('login');
     }
 
-    function register() {
+    public function register() {
         return view('register');
     }
 
@@ -36,7 +36,7 @@ class AuthController extends Controller
         return response()->json(['error' => 'User does not exist'], 422);
     }
 
-    function registerPost(Request $request) {
+    public function registerPost(Request $request) {
         $request->validate([
            'name' => 'required',
            'email' => 'required|email|unique:user',
@@ -55,10 +55,9 @@ class AuthController extends Controller
         }
         return response()->json(['success' => true], 200);
     }
-    function logout(){
+    public function logout(){
         Session::flush();
         Auth::logout();
         return redirect(route('login'));
-
     }
 }

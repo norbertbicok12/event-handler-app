@@ -18,7 +18,7 @@
 </head>
 <body>
     @include('navbar')
-    <main class="vh-100">@yield('content')</main>
+    <main class="min-vh-100 .content">@yield('content')</main>
 
 
 
