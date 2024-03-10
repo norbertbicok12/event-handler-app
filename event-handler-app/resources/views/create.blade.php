@@ -40,9 +40,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-3 mb-5"
-                            style="background-color: #071013; border-color: #071013">Register
-                    </button>
+                    <button type="submit" class="btn btn-primary mt-3 mb-5">Create</button>
                 </form>
             </div>
         </div>
@@ -51,13 +49,15 @@
         $(document).ready(function () {
             $('#createForm').submit(function (e) {
                 e.preventDefault();
-                var formData = $(this).serialize();
+                var formData = new FormData(this);
                 $.ajax({
                     url: '/create',
                     type: 'POST',
                     headers: {
                         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
                     },
+                    processData: false,
+                    contentType: false,
                     data: formData,
                     success: function (response) {
                         window.location.href = '/my_events';

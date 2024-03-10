@@ -20,7 +20,5 @@
     @include('navbar')
     <main class="min-vh-100 .content">@yield('content')</main>
 
-
-
 </body>
 </html>

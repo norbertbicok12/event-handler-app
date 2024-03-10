@@ -14,10 +14,15 @@
                                 <h5 class="mt-4"><strong>Location:</strong> {{ $event->location }}, {{ $event->place_of_event }}</h5>
                                 <h5 class="mt-4"><strong>Date:</strong> {{ $event->date_of_event }}</h5>
                                 <p class="mt-4"><strong>Description:</strong> {{ $event->description }}</p>
+                                <p class="mt-4"><strong>Participants:</strong> {{ $event->participants }}</p>
                                 @auth
-                                    <button class="btn btn-primary mb-4 mt-4" onclick="window.location.href='{{ route('subscribe', ['id' => $event->id]) }}'" style="background-color: #071013; border-color: #071013">Participate</button>
+                                    @if($event->subscribed)
+                                    <button class="btn btn-primary mb-4 mt-4" onclick="window.location.href='{{ route('unsubscribe', ['id' => $event->id]) }}'">Resign from participation</button>
+                                    @else
+                                        <button class="btn btn-primary mb-4 mt-4" onclick="window.location.href='{{ route('subscribe', ['id' => $event->id]) }}'">Participate</button>
+                                    @endif
                                 @else
-                                    <button class="btn btn-primary mb-4 mt-4" onclick="window.location.href='{{ route('login') }}'" style="background-color: #071013; border-color: #071013">Participate</button>
+                                    <button class="btn btn-primary mb-4 mt-4" onclick="window.location.href='{{ route('login') }}'">Participate</button>
                                 @endauth
                             </div>
                         </div>

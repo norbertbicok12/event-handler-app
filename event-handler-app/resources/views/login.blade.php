@@ -17,9 +17,7 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3"
-                            style="background-color: #071013; border-color: #071013">Login
-                    </button>
+                    <button type="submit" class="btn btn-primary mt-3">Login</button>
                 </form>
             </div>
         </div>

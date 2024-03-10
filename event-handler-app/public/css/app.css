@@ -1,5 +1,6 @@
-main {
-    background-color: #EB5160;
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(246,246,246,1) 0%, rgba(230,230,230,1) 50%, rgba(210,210,210,1) 100%);
 }
 .content {
     padding-top: 5rem;

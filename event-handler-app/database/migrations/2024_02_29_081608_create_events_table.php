@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamp('date_of_event');
             $table->text('user_visibility');
             $table->unsignedBigInteger('creator_user_id');
-            $table->foreign('creator_user_id')->references('id')->on('user');
+            $table->foreign('creator_user_id')->references('id')->on('users');
         });
     }
 
