@@ -2,13 +2,13 @@
 @section('title', 'Events')
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-md-6">
                 <form action="{{ route('events.search') }}" method="GET" class="input-group">
                     <label>
                         <input type="text" name="query" class="form-control" placeholder="Search events...">
                     </label>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary button-color">Search</button>
                 </form>
             </div>
         </div>

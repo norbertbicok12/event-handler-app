@@ -23,4 +23,5 @@ class Event extends Model
         'user_visibility',
         'creator_user_id',
     ];
+
 }

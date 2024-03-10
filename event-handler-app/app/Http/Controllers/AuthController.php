@@ -40,7 +40,8 @@ class AuthController extends Controller
         $request->validate([
            'name' => 'required',
            'email' => 'required|email|unique:user',
-           'password' => 'required|min:6',
+        'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+        'password_confirmation' => 'min:6',
            'place_of_birth' => 'required'
         ]);
 
@@ -50,10 +51,17 @@ class AuthController extends Controller
         $data['place_of_birth'] = $request->place_of_birth;
 
         $user = User::create($data);
-        if(!$user){
-            return response()->json(['error' => 'User does not exist'], 422);
+        if ($user) {
+            // Log in the user
+            Auth::login($user);
+
+            // Authentication passed
+            return response()->json(['success' => true, 'user' => $user], 200);
+        } else {
+            // User creation failed
+            return response()->json(['error' => 'User registration failed'], 422);
         }
-        return response()->json(['success' => true], 200);
+
     }
     public function logout(){
         Session::flush();

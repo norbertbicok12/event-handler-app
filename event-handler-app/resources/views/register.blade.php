@@ -22,12 +22,14 @@
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <div class="mb-3">
+                        <label for="password_confirmation" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                    </div>
+                    <div class="mb-3">
                         <label for="place_of_birth" class="form-label">Place of Birth</label>
                         <input type="text" class="form-control" id="place_of_birth" name="place_of_birth">
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3"
-                            style="background-color: #071013; border-color: #071013">Register
-                    </button>
+                    <button type="submit" class="btn btn-primary mt-3">Register</button>
                 </form>
             </div>
         </div>
@@ -45,7 +47,7 @@
                     },
                     data: formData,
                     success: function (response) {
-                        window.location.href = '/login';
+                        window.location.href = '/';
                     },
                     error: function (xhr) {
                         var errors = xhr.responseJSON.errors;
